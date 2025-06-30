@@ -20,33 +20,30 @@ export default function Modal({ isOpen, onClose }) {
             zIndex: 1000,
             ...eudoxus
         }}>
-            <div style={{
-                position: "absolute",
-                top: "calc(50% - 340px - 20px)",
-                right: "calc(50% - 365px - 20px)",
-                overflow: "visible",
-                zIndex: 2
-            }}>
-                <CloseButton onClick={onClose} />
-            </div>
             <div className="modal-content" style={{
                 background: "#fff",
-                padding: "40px",
-                paddingBottom: "2rem",
+                padding: "clamp(8px, 4vw, 32px)",
+                paddingBottom: "clamp(8px, 4vw, 24px)",
                 borderRadius: "16px",
-                width: "730px",
+                width: "calc(100vw - 16px)",
                 maxWidth: "730px",
-                minWidth: "320px",
-                minHeight: "680px",
-                maxHeight: "680px",
+                height: "auto",
+                maxHeight: "calc(100vh - 16px)",
                 position: "relative",
                 boxSizing: "border-box",
-                overflowY: "auto",
-                overflowX: "hidden",
+                overflow: "visible",
                 display: "flex",
                 flexDirection: "column",
                 ...eudoxus
             }}>
+                <div style={{
+                    position: "absolute",
+                    top: "-16px",
+                    right: "-16px",
+                    zIndex: 2
+                }}>
+                    <CloseButton onClick={onClose} />
+                </div>
                 <div style={{
                     width: "100%",
                     display: "flex",
@@ -85,7 +82,6 @@ export default function Modal({ isOpen, onClose }) {
                     style={{
                         marginTop: "5px",
                         position: "relative",
-                        minHeight: "340px",
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "flex-start",
@@ -94,9 +90,9 @@ export default function Modal({ isOpen, onClose }) {
                         ...eudoxus
                     }}
                 >
-                    <div style={{ display: "flex", flexDirection: "column", marginBottom: "1.1rem", width: "100%", maxWidth: "100%", alignItems: "flex-start", marginLeft: 0, boxSizing: 'border-box' }}>
+                    <div style={{ display: "flex", flexDirection: "column", marginBottom: "1.6rem", width: "100%", maxWidth: "100%", alignItems: "flex-start", marginLeft: 0, boxSizing: 'border-box' }}>
                         <label htmlFor='email' id="forminator-field-email-1_685e8f5d98b12-label" className="forminator-label" style={{ marginBottom: "0.3em", fontSize: "clamp(0.7rem, 2vw, 0.85rem)", fontWeight: 700, fontFamily: 'Open Sans, Arial, sans-serif', display: "flex", alignItems: "center" }}>
-                            Email <span className="forminator-required" style={{ color: '#6c17f7', marginLeft: 4, fontSize: '1.3em' }}>*</span>
+                            Email <span className="forminator-required" style={{ color: '#2196f3', marginLeft: 4, fontSize: '1.1em' }}>*</span>
                         </label>
                         <input
                             id='forminator-field-email-1_685e8f5d98b12'
@@ -112,28 +108,34 @@ export default function Modal({ isOpen, onClose }) {
                             aria-invalid={touched && !email.trim() ? "true" : "false"}
                             style={{ width: "100%", maxWidth: "100%", boxSizing: 'border-box', height: "clamp(32px, 6vw, 38px)", fontSize: "clamp(0.7rem, 1.8vw, 0.9rem)", borderRadius: "clamp(10px, 2vw, 16px)", padding: "0 clamp(12px, 2vw, 20px)", border: "1px solid #ddd", fontFamily: 'Eudoxus Sans, Arial, sans-serif' }}
                         />
-                        {touched && !email.trim() && (
-                            <span className="forminator-error-message" id="forminator-field-email-1_685e8f5d98b12-error" style={{
-                                marginTop: "0.5em",
-                                marginBottom: "1em",
-                                width: "100%",
-                                maxWidth: "100%",
-                                background: "#EEEEEE",
-                                borderRadius: "clamp(10px, 2vw, 16px)",
-                                padding: "8px clamp(12px, 2vw, 20px)",
-                                color: "#BE0027",
-                                fontSize: "12px",
-                                fontFamily: 'Eudoxus Sans, Arial, sans-serif',
-                                border: "1px solid #ddd",
-                                display: 'block',
-                                boxSizing: 'border-box',
-                                textAlign: 'left'
-                            }}>
-                                This field is required
-                            </span>
-                        )}
+                        <div style={{ minHeight: "28px", maxHeight: "28px", width: "100%" }}>
+                            {touched && !email.trim() ? (
+                                <span className="forminator-error-message" id="forminator-field-email-1_685e8f5d98b12-error" style={{
+                                    fontSize: "12px",
+                                    fontFamily: 'Eudoxus Sans, Arial, sans-serif',
+                                    border: "1px solid #ddd",
+                                    display: 'block',
+                                    boxSizing: 'border-box',
+                                    textAlign: 'left',
+                                    wordBreak: 'break-word',
+                                    overflowWrap: 'break-word',
+                                    color: "#BE0027",
+                                    background: "#f3f3f3",
+                                    borderRadius: "clamp(10px, 2vw, 16px)",
+                                    padding: "8px clamp(12px, 2vw, 20px)",
+                                    width: "100%",
+                                    maxWidth: "100%",
+                                    height: "28px",
+                                    lineHeight: "12px"
+                                }}>
+                                    This field is required
+                                </span>
+                            ) : (
+                                <span style={{ display: 'block', height: '28px', width: '100%' }}></span>
+                            )}
+                        </div>
                     </div>
-                    <div style={{ display: "flex", flexDirection: "column", marginBottom: "1.1rem", width: "100%", maxWidth: "100%", alignItems: "flex-start", marginLeft: 0, boxSizing: 'border-box' }}>
+                    <div style={{ display: "flex", flexDirection: "column", marginBottom: "1.6rem", width: "100%", maxWidth: "100%", alignItems: "flex-start", marginLeft: 0, boxSizing: 'border-box' }}>
                         <label htmlFor='message' id="forminator-field-textarea-1_685e8f5d98b12-label" className="forminator-label" style={{ marginBottom: "0.3em", fontSize: "clamp(0.7rem, 2vw, 0.85rem)", fontWeight: 700, fontFamily: 'Open Sans, Arial, sans-serif' }}>Your Message (optional)</label>
                         <textarea
                             id='forminator-field-textarea-1_685e8f5d98b12'
@@ -144,9 +146,9 @@ export default function Modal({ isOpen, onClose }) {
                             style={{ width: "100%", maxWidth: "100%", boxSizing: 'border-box', minHeight: "clamp(70px, 12vw, 80px)", height: "clamp(70px, 12vw, 80px)", fontSize: "clamp(0.7rem, 1.8vw, 0.9rem)", borderRadius: "clamp(10px, 2vw, 16px)", padding: "12px clamp(12px, 2vw, 20px)", border: "1px solid #ddd", fontFamily: 'Eudoxus Sans, Arial, sans-serif', resize: "none" }}
                         />
                     </div>
-                    <div style={{ display: "flex", flexDirection: "column", marginBottom: "1.1rem", width: "100%", maxWidth: "100%", alignItems: "flex-start", marginLeft: 0, boxSizing: 'border-box' }}>
+                    <div style={{ display: "flex", flexDirection: "column", marginBottom: "1.6rem", width: "100%", maxWidth: "100%", alignItems: "flex-start", marginLeft: 0, boxSizing: 'border-box' }}>
                         <label htmlFor='referral' id="forminator-field-text-2_685e8f5d98b12-label" className="forminator-label" style={{ marginBottom: "0.3em", fontSize: "clamp(0.7rem, 2vw, 0.85rem)", fontWeight: 700, fontFamily: 'Open Sans, Arial, sans-serif', display: "flex", alignItems: "center" }}>
-                            How Did You Hear About Us? <span className="forminator-required" style={{ color: '#6c17f7', marginLeft: 4, fontSize: '1.3em' }}>*</span>
+                            How Did You Hear About Us? <span className="forminator-required" style={{ color: '#2196f3', marginLeft: 4, fontSize: '1.1em' }}>*</span>
                         </label>
                         <input
                             id="forminator-field-text-2_685e8f5d98b12"
@@ -161,26 +163,32 @@ export default function Modal({ isOpen, onClose }) {
                             aria-invalid={touched && !referral.trim() ? "true" : "false"}
                             style={{ width: "100%", maxWidth: "100%", boxSizing: 'border-box', height: "clamp(32px, 6vw, 38px)", fontSize: "clamp(0.7rem, 1.8vw, 0.9rem)", borderRadius: "clamp(10px, 2vw, 16px)", padding: "0 clamp(12px, 2vw, 20px)", border: "1px solid #ddd", fontFamily: 'Eudoxus Sans, Arial, sans-serif' }}
                         />
-                        {touched && !referral.trim() && (
-                            <span className="forminator-error-message" id="forminator-field-text-2_685e8f5d98b12-error" style={{
-                                marginTop: "0.5em",
-                                marginBottom: "1em",
-                                width: "100%",
-                                maxWidth: "100%",
-                                background: "#EEEEEE",
-                                borderRadius: "clamp(10px, 2vw, 16px)",
-                                padding: "8px clamp(12px, 2vw, 20px)",
-                                color: "#BE0027",
-                                fontSize: "12px",
-                                fontFamily: 'Eudoxus Sans, Arial, sans-serif',
-                                border: "1px solid #ddd",
-                                display: 'block',
-                                boxSizing: 'border-box',
-                                textAlign: 'left'
-                            }}>
-                                This field is required!
-                            </span>
-                        )}
+                        <div style={{ minHeight: "28px", maxHeight: "28px", width: "100%" }}>
+                            {touched && !referral.trim() ? (
+                                <span className="forminator-error-message" id="forminator-field-text-2_685e8f5d98b12-error" style={{
+                                    fontSize: "12px",
+                                    fontFamily: 'Eudoxus Sans, Arial, sans-serif',
+                                    border: "1px solid #ddd",
+                                    display: 'block',
+                                    boxSizing: 'border-box',
+                                    textAlign: 'left',
+                                    wordBreak: 'break-word',
+                                    overflowWrap: 'break-word',
+                                    color: "#BE0027",
+                                    background: "#f3f3f3",
+                                    borderRadius: "clamp(10px, 2vw, 16px)",
+                                    padding: "8px clamp(12px, 2vw, 20px)",
+                                    width: "100%",
+                                    maxWidth: "100%",
+                                    height: "28px",
+                                    lineHeight: "12px"
+                                }}>
+                                    This field is required!
+                                </span>
+                            ) : (
+                                <span style={{ display: 'block', height: '28px', width: '100%' }}></span>
+                            )}
+                        </div>
                     </div>
                     <div style={{
                         display: "flex",
