@@ -126,9 +126,10 @@ export default function Modal({ isOpen, onClose }) {
                                     width: "100%",
                                     maxWidth: "100%",
                                     height: "28px",
-                                    lineHeight: "12px"
+                                    lineHeight: "12px",
+                                    marginTop: "0.6em"
                                 }}>
-                                    This field is required
+                                    This field is required.
                                 </span>
                             ) : (
                                 <span style={{ display: 'block', height: '28px', width: '100%' }}></span>
@@ -181,9 +182,10 @@ export default function Modal({ isOpen, onClose }) {
                                     width: "100%",
                                     maxWidth: "100%",
                                     height: "28px",
-                                    lineHeight: "12px"
+                                    lineHeight: "12px",
+                                    marginTop: "0.6em"
                                 }}>
-                                    This field is required!
+                                    This field is required.
                                 </span>
                             ) : (
                                 <span style={{ display: 'block', height: '28px', width: '100%' }}></span>

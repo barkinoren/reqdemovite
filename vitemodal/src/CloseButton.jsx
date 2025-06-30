@@ -10,6 +10,7 @@ export default function CloseButton({ onClick, style }) {
       aria-label="Close"
       style={{
         backgroundColor: isActive ? "orange" : "white",
+        color: isActive ? "white" : "orange",
         border: "none",
         borderRadius: "50%",
         width: "40px",
