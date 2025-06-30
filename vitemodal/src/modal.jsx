@@ -29,7 +29,7 @@ export default function Modal({ isOpen, onClose }) {
             }}>
                 <CloseButton onClick={onClose} />
             </div>
-            <div style={{
+            <div className="modal-content" style={{
                 background: "#fff",
                 padding: "40px",
                 paddingBottom: "2rem",
@@ -41,7 +41,8 @@ export default function Modal({ isOpen, onClose }) {
                 maxHeight: "680px",
                 position: "relative",
                 boxSizing: "border-box",
-                overflow: "auto",
+                overflowY: "auto",
+                overflowX: "hidden",
                 display: "flex",
                 flexDirection: "column",
                 ...eudoxus
@@ -221,12 +222,12 @@ export default function Modal({ isOpen, onClose }) {
                             style={{
                                 backgroundColor: "#6c17f7",
                                 color: "white",
-                                padding: "8px 24px",
+                                padding: "14px 36px",
                                 borderRadius: "999px",
                                 border: "none",
                                 cursor: "pointer",
                                 fontFamily: 'Eudoxus Sans, Arial, sans-serif',
-                                fontSize: "clamp(0.9rem, 2vw, 1rem)",
+                                fontSize: "1.15rem",
                                 fontWeight: 700,
                                 marginBottom: "1.5rem"
                             }}
