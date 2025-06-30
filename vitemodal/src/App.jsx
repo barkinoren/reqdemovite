@@ -14,25 +14,22 @@ function App() {
       justifyContent: "center", 
       alignItems: "center",
       minHeight: "100vh",
-      backgroundColor: "red"
+      backgroundColor: "White"
     }}>
-      <h2 style = {{
-        fontFamily: "Arial, sans-serif",
-        fontSize: "2.5rem",
-        fontWeight: "bold",
-        color: "White",
-      }}>Contact Us!</h2>
+     
       <Button 
         style={{
-          fontFamily: "comicsans, comic-sans-ms, sans-serif",
+          fontFamily: "Eudoxus Sans, Arial, sans-serif",
           fontSize: "1.5rem",
           fontWeight: "bold",
-          color: "white",
-          backgroundColor: "#F0F0F0",
-          padding: "10px 20px",
-          borderRadius: "5px",
+          color: "White",
+          backgroundColor: "#F9830B",
+          padding: "15px 25px",
+          borderRadius: "28px",
           border: "none",
-          cursor: "pointer"
+          cursor: "pointer",
+          outline: "none",
+          boxShadow: "none"
         }}
         onClick={() => setIsModalOpen(true)}
       >
