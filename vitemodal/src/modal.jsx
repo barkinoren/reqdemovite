@@ -22,6 +22,7 @@ export default function Modal({ isOpen, onClose }) {
         }}>
             <div className="modal-content" style={{
                 background: "#fff",
+                color: "#222",
                 padding: "clamp(8px, 4vw, 32px)",
                 paddingBottom: "clamp(8px, 4vw, 24px)",
                 borderRadius: "16px",
@@ -92,7 +93,7 @@ export default function Modal({ isOpen, onClose }) {
                 >
                     <div style={{ display: "flex", flexDirection: "column", marginBottom: "1.6rem", width: "100%", maxWidth: "100%", alignItems: "flex-start", marginLeft: 0, boxSizing: 'border-box' }}>
                         <label htmlFor='email' id="forminator-field-email-1_685e8f5d98b12-label" className="forminator-label" style={{ marginBottom: "0.3em", fontSize: "clamp(0.7rem, 2vw, 0.85rem)", fontWeight: 700, fontFamily: 'Open Sans, Arial, sans-serif', display: "flex", alignItems: "center" }}>
-                            Email <span className="forminator-required" style={{ color: '#2196f3', marginLeft: 4, fontSize: '1.1em' }}>*</span>
+                            Email <span className="forminator-required" style={{ color: '#6c17f7', marginLeft: 4, fontSize: '1.1em' }}>*</span>
                         </label>
                         <input
                             id='forminator-field-email-1_685e8f5d98b12'
@@ -149,7 +150,7 @@ export default function Modal({ isOpen, onClose }) {
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", marginBottom: "1.6rem", width: "100%", maxWidth: "100%", alignItems: "flex-start", marginLeft: 0, boxSizing: 'border-box' }}>
                         <label htmlFor='referral' id="forminator-field-text-2_685e8f5d98b12-label" className="forminator-label" style={{ marginBottom: "0.3em", fontSize: "clamp(0.7rem, 2vw, 0.85rem)", fontWeight: 700, fontFamily: 'Open Sans, Arial, sans-serif', display: "flex", alignItems: "center" }}>
-                            How Did You Hear About Us? <span className="forminator-required" style={{ color: '#2196f3', marginLeft: 4, fontSize: '1.1em' }}>*</span>
+                            How Did You Hear About Us? <span className="forminator-required" style={{ color: '#6c17f7', marginLeft: 4, fontSize: '1.1em' }}>*</span>
                         </label>
                         <input
                             id="forminator-field-text-2_685e8f5d98b12"
